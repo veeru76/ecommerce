@@ -12,6 +12,7 @@ const Product = () => {
 
 	useEffect(() => {
 		getProductInfo();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const getProductInfo = async () => {
