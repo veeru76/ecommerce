@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 //import { Link } from "react-router-dom";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
-import IoCloseSharp from "react-icons";
 //import { clearCart } from "./redux/actions/ProductActions";
 const Cart = () => {
 	const Items = useSelector((state) => state.allReducers.products);
@@ -45,7 +44,6 @@ const Cart = () => {
 									</h6>
 								</td>
 								<td className="font-bold p-10">Rs.{item.price}</td>
-								<td>{<IoCloseSharp />}</td>
 								<td>
 									<button
 										onClick={() =>
