@@ -1,9 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import Login from "./Login";
-import DropDown from "./DropDown";
-import Categories from "./Categories";
 import { useSelector } from "react-redux";
 const Title = () => {
 	return (

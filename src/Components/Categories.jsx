@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import DropDown from "./DropDown";
 
 const Categories = () => {
 	const [allCategories, setAllCategories] = useState([]);

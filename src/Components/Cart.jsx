@@ -1,7 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 //import { Link } from "react-router-dom";
-import { useState } from "react";
+//import { useState } from "react";
 import Shimmer from "./Shimmer";
 //import { clearCart } from "./redux/actions/ProductActions";
 const Cart = () => {
@@ -10,7 +10,7 @@ const Cart = () => {
 	const upDateItemQuantity = () => {
 		return;
 	};
-	const dispatch = useDispatch();
+	//const dispatch = useDispatch();
 	return !Items ? (
 		<Shimmer />
 	) : (

@@ -1,6 +1,6 @@
-import React, { Profiler } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addItem } from "./redux/actions/ProductActions";
 
@@ -8,20 +8,23 @@ const Product = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();
 	const [product, setProduct] = useState([]);
-	const [addedToCart, setAddedToCart] = useState(false);
+	//const [addedToCart, setAddedToCart] = useState(false);
+
 	useEffect(() => {
 		getProductInfo();
 	}, []);
+
 	const getProductInfo = async () => {
 		const data = await fetch(`https://fakestoreapi.com/products/${id}`);
 		console.log(data);
 		const rest = await data.json();
 		setProduct(rest);
 	};
+
 	console.log(product);
 	const addItemHandler = (product) => {
 		dispatch(addItem(product));
-		setAddedToCart(true);
+		//	setAddedToCart(true);
 	};
 
 	// const removeItemHandler = (product) => {
