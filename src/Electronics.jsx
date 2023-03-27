@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import { useState, useEffect } from "react";
+import Shimmer from "./Components/Shimmer";
 import { Link } from "react-router-dom";
-import Categories from "./Categories";
 
 const Productcard = ({
 	category,
@@ -22,28 +21,28 @@ const Productcard = ({
 	);
 };
 
-const Body = () => {
-	const [allProducts, setAllProducts] = useState([]);
+const Electronics = () => {
+	const [allElectronics, setAllElectronics] = useState([]);
 
 	useEffect(() => {
 		getProducts();
 	}, []);
 	const getProducts = async () => {
-		const res = await fetch("https://fakestoreapi.com/products");
+		const res = await fetch(
+			"https://fakestoreapi.com/products/category/electronics"
+		);
 		const data = await res.json();
 		console.log(data);
-		setAllProducts(data);
+		setAllElectronics(data);
 	};
 	return (
 		<>
-			<div className="flex flex-wrap justify-center">
-				<Categories />
-			</div>
-			<div className="grid grid-rows-5 grid-flow-col gap-4 min-h-screen">
-				{allProducts.length === 0 ? (
+			<div className="flex flex-wrap justify-center"></div>
+			<div className="grid grid-rows-2 grid-flow-col gap-4 min-h-screen">
+				{allElectronics.length === 0 ? (
 					<Shimmer />
 				) : (
-					allProducts.map((product, index) => {
+					allElectronics.map((product, index) => {
 						return (
 							<Link to={"/products/" + product.id} key={product.title}>
 								<Productcard {...product} />
@@ -56,4 +55,4 @@ const Body = () => {
 	);
 };
 
-export default Body;
+export default Electronics;

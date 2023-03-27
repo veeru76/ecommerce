@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import Categories from "./Components/Categories";
+import Electronics from "./Electronics";
 import Cart from "./Components/Cart";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
@@ -12,6 +13,7 @@ import Login from "./Components/Login";
 import Product from "./Components/Product";
 import { Provider } from "react-redux";
 import store from "./Components/Store";
+import Mens from "./Mens";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -25,13 +27,21 @@ const appRouter = createBrowserRouter([
 				path: "/",
 				element: <Body />,
 			},
-			{
-				path: "/Categories",
-				element: <Categories />,
-			},
+			// {
+			// 	path: "/Categories",
+			// 	element: <Categories />,
+			// },
 			{
 				path: "/Cart",
 				element: <Cart />,
+			},
+			{
+				path: "/electronics",
+				element: <Electronics />,
+			},
+			{
+				path: "/men's clothing",
+				element: <Mens />,
 			},
 			{
 				path: "/Contact",
@@ -41,10 +51,10 @@ const appRouter = createBrowserRouter([
 				path: "/products/:id",
 				element: <Product />,
 			},
-			// {
-			// 	path: "/Login",
-			// 	element: <Login />,
-			// },
+			{
+				path: "/Login",
+				element: <Login />,
+			},
 		],
 	},
 ]);

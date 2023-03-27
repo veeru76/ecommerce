@@ -13,7 +13,6 @@ const Shimmer = () => {
 						></div>
 					);
 				})}
-			Shimmer
 		</div>
 	);
 };
